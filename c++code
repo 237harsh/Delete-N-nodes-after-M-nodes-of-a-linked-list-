@@ -1,0 +1,36 @@
+class Solution
+{
+    public:
+    void linkdelete(struct Node  *head, int M, int N)
+   {
+       
+       if(N==0||head==NULL)return;
+       
+       Node* curr=head;
+       int count=1;
+       while(curr){
+       //first reach to m nodes
+          if(count==M)
+          {
+              int n=N;
+              //delete n nodes
+              while(curr->next&&n>0)
+              {
+                  curr->next=curr->next->next;
+                  n--;
+              }
+              count =0;
+          }
+          count++;
+          curr=curr->next;
+       }
+       return;
+     
+      
+      
+    }
+};
+
+
+
+https://practice.geeksforgeeks.org/problems/delete-n-nodes-after-m-nodes-of-a-linked-list/1/?page=3&category[]=Linked%20List&sortBy=submissions#
